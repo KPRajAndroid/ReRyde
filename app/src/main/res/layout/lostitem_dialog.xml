@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lost_item_title"
+        android:textStyle="bold"
+        android:textColor="@color/black_text_color"
+        android:textSize="@dimen/_11sdp"
+        android:textAlignment="center"
+        android:layout_margin="@dimen/_8sdp"/>
+
+    <EditText
+        android:id="@+id/name_etxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cancel_text"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="start"
+        android:padding="@dimen/_5sdp"
+        android:hint="@string/lost_item"
+        android:lines="1"
+        android:textSize="@dimen/_11sdp"
+        android:textColor="@color/black_text_color"/>
+
+    <EditText
+        android:id="@+id/description_etxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cancel_text"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="start"
+        android:padding="@dimen/_5sdp"
+        android:hint="@string/description"
+        android:lines="3"
+        android:textSize="@dimen/_11sdp"
+        android:textColor="@color/black_text_color"/>
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:text="@string/submit"
+        android:textColor="@color/text_color_white" />
+
+</LinearLayout>

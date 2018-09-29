@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.reryde.app.Activities.RRegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+        <com.reryde.app.Utils.MyEditText
+            android:layout_width="match_parent"
+            android:id="@+id/first_name_edt"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_15sdp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/editext_bg_new"
+            android:textColorHint="@color/black_text_color"
+            android:padding="@dimen/_7sdp"
+            android:digits="qwertzuiopasdfghjklyxcvbnm ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:inputType="textCapWords"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"
+            android:text=""
+            android:hint="First Name"
+            android:layout_height="wrap_content" />
+
+        <com.reryde.app.Utils.MyEditText
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/black_text_color"
+            android:id="@+id/last_name_edt"
+            android:background="@drawable/editext_bg_new"
+            android:textColorHint="@color/black_text_color"
+            android:padding="@dimen/_7sdp"
+            android:textSize="@dimen/_15sdp"
+            android:digits="qwertzuiopasdfghjklyxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+            android:inputType="textCapWords"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"
+            android:text=""
+            android:hint="Last Name"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                app:defaultCode="1"
+                app:hideNameCode="true"
+                />
+            <com.reryde.app.Utils.MyEditText
+                android:id="@+id/mobile_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:maxLength="10"
+                android:text=""
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/editext_bg_new"
+                android:textColorHint="@color/black_text_color"
+                android:textSize="@dimen/_15sdp"
+                android:hint="Enter Phone Number"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@color/black_text_color"
+                android:padding="@dimen/_7sdp"
+                android:textAlignment="viewStart"
+                android:visibility="visible"/>
+
+        </LinearLayout>
+
+        <com.reryde.app.Utils.MyEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text=""
+            android:id="@+id/email_edit"
+            android:background="@drawable/editext_bg_new"
+            android:textColorHint="@color/black_text_color"
+            android:padding="@dimen/_7sdp"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:hint="Enter Email"
+            android:layout_height="wrap_content" />
+        <com.reryde.app.Utils.MyEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text=""
+            android:id="@+id/referal_edit"
+            android:background="@drawable/editext_bg_new"
+            android:textColorHint="@color/black_text_color"
+            android:padding="@dimen/_7sdp"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:hint="Referral code(optional)"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/agreeCheck"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <com.reryde.app.Utils.MyTextView
+                android:id="@+id/agreeLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/agree_text"
+                android:textColor="@color/blues"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+        <com.reryde.app.Utils.MyButton
+            android:layout_width="match_parent"
+            android:text="@string/signup"
+            android:id="@+id/signup_btn"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/colorTextWhite"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content" />
+
+        <com.reryde.app.Utils.MyBoldTextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:id="@+id/login_txt"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            android:text="Already Have an Account? Login"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_color_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/text_color_white"
+        android:elevation="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:src="@drawable/back_icon" />
+
+        <com.reryde.app.Utils.MyBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/settings"
+            android:textColor="@color/black_text_color"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/lnrFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.reryde.app.Utils.MyBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:text="@string/favorites"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view_grey_bg"
+                android:visibility="gone"
+                android:gravity="bottom" />
+
+            <LinearLayout
+                android:id="@+id/lnrHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgHome"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/home_search" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_10sdp">
+
+                    <com.reryde.app.Utils.MyBoldTextView
+                        android:id="@+id/myBoldTextView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_location"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black_text_color"
+                        android:textSize="@dimen/_12sdp"
+                        android:visibility="visible" />
+
+
+                    <com.reryde.app.Utils.MyBoldTextView
+                        android:id="@+id/txtHomeLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:text="@string/add_home_location"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/suggestion_color"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+
+
+                <com.reryde.app.Utils.MyBoldTextView
+                    android:id="@+id/txtDeleteHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:text="@string/delete"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/view_grey_bg"
+                android:visibility="gone"
+                android:gravity="bottom" />
+
+            <LinearLayout
+                android:id="@+id/lnrWork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgWork"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/work_search" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:paddingTop="@dimen/_10sdp">
+
+                    <com.reryde.app.Utils.MyBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/work_location"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black_text_color"
+                        android:textSize="@dimen/_12sdp"
+                        android:visibility="gone" />
+
+
+                    <com.reryde.app.Utils.MyBoldTextView
+                        android:id="@+id/txtWorkLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:text="@string/add_work_location"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/suggestion_color"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <com.reryde.app.Utils.MyBoldTextView
+                    android:id="@+id/txtDeleteWork"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:text="@string/delete"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view_grey_bg"
+                android:gravity="bottom" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/avatar"
+                    android:tint="@color/grey"
+                    android:layout_centerVertical="true"/>
+
+                <com.reryde.app.Utils.MyTextView
+                    android:id="@+id/name_Txt"
+                    android:layout_toRightOf="@+id/avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:text="Milton Rais"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:tint="@color/grey"
+                    app:srcCompat="@drawable/ic_next_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view_grey_bg"
+                android:gravity="bottom" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/envelop"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/envelope"
+                    android:tint="@color/grey"
+                    android:layout_centerVertical="true"/>
+
+                <com.reryde.app.Utils.MyTextView
+                    android:id="@+id/mail_Txt"
+                    android:layout_toRightOf="@+id/envelop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="milton@gmail.com"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:tint="@color/grey"
+                    app:srcCompat="@drawable/ic_next_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view_grey_bg"
+                android:gravity="bottom" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/call"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/call_answer"
+                    android:tint="@color/grey"
+                    android:layout_centerVertical="true"/>
+
+                <com.reryde.app.Utils.MyTextView
+                    android:id="@+id/number_Txt"
+                    android:layout_toRightOf="@+id/call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="+1 9988776655"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:tint="@color/grey"
+                    app:srcCompat="@drawable/ic_next_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view_grey_bg"
+                android:gravity="bottom" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/driver"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/ic_driver"
+                    android:tint="@color/grey"
+                    android:layout_centerVertical="true"/>
+
+                <com.reryde.app.Utils.MyTextView
+                    android:layout_toRightOf="@+id/driver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Become a Driver"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:tint="@color/grey"
+                    app:srcCompat="@drawable/ic_next_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view_grey_bg"
+                android:gravity="bottom" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/logout"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/logout"
+                    android:tint="@color/grey"
+                    android:layout_centerVertical="true"/>
+
+                <com.reryde.app.Utils.MyTextView
+                    android:layout_toRightOf="@+id/logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Logout"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:id="@+id/logout_txt"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:tint="@color/grey"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_next_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/view_grey_bg"
+                android:gravity="bottom"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/lnrLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.reryde.app.Utils.MyBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:text="@string/language"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/view_grey_bg"
+            android:gravity="bottom" />
+
+        <LinearLayout
+            android:id="@+id/lnrEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp">
+
+            <RadioButton
+                android:id="@+id/radioEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.reryde.app.Utils.MyBoldTextView
+                android:id="@+id/lblEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_5sdp"
+                android:text="@string/english"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/view_grey_bg"
+            android:gravity="bottom" />
+
+        <LinearLayout
+            android:id="@+id/lnrArabic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp">
+
+            <RadioButton
+                android:id="@+id/radioArabic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <com.reryde.app.Utils.MyBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_5sdp"
+                android:text="@string/arabic"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/view_grey_bg"
+            android:gravity="bottom" />
+
+    </LinearLayout>
+
+</LinearLayout>

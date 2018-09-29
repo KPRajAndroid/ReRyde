@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/contact_layout"
+        android:layout_width="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_toStartOf="@+id/select_contact"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_dummy_user"
+            app:civ_border_color="@color/button_text_color"
+            app:civ_border_width="2dp" />
+
+        <com.reryde.app.Utils.MyTextView
+            android:id="@+id/name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/profile_pic"
+            android:text="Name"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_14sdp" />
+
+        <com.reryde.app.Utils.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_txt"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_toEndOf="@+id/profile_pic"
+            android:maxLines="1"
+            android:id="@+id/Phone_number_txt"
+            android:text="Phone Number"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_12sdp" />
+    </RelativeLayout>
+
+    <com.reryde.app.Utils.CheckboxCustomized
+        android:layout_width="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:id="@+id/select_contact"
+        android:button="@null"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="@dimen/_20sdp" />
+</RelativeLayout>

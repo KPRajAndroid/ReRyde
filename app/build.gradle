@@ -1,0 +1,137 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.reryde.app"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 16
+        versionName "1.0"
+//        versionCode getVersionCode()
+//        versionName getVersionName()
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // turn on the given issue id's
+        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        maven {
+            url uri('mint-plugin-repo-5.1.0')
+        }
+    }
+
+}
+
+repositories {
+    mavenCentral() // jcenter() works as well because it pulls from Maven Central
+}
+
+def getVersionCode = { ->
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine 'git', 'rev-list', '--first-parent', '--count', 'master'
+            standardOutput = stdout
+        }
+        return Integer.parseInt(stdout.toString().trim())
+    }
+    catch (ignored) {
+        return -1;
+    }
+}
+def getVersionName = { ->
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine 'git', 'describe', '--tags'
+            standardOutput = stdout
+        }
+        return stdout.toString().trim()
+    }
+    catch (ignored) {
+        return null;
+    }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '26.0.0'
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //For error logcat
+    //    compile project(':library')
+
+
+    compile('com.paypal.sdk:paypal-android-sdk:2.15.3') {
+        exclude group: 'io.card'
+    }
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.airbnb.android:lottie:2.2.5'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.5'
+    compile 'com.mikhaellopez:circularimageview:3.0.2'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.android.support:design:27.0.2'
+    compile 'uk.co.chrisjenx:calligraphy:2.0.1'
+    compile 'com.android.support:support-v4:27.0.2'
+    compile 'com.google.android.gms:play-services-auth:11.8.0'
+    compile 'com.google.android.gms:play-services-gcm:11.8.0'
+    compile 'com.google.android.gms:play-services:11.8.0'
+    compile 'com.facebook.android:facebook-android-sdk:4.12.1'
+    compile 'com.google.firebase:firebase-messaging:11.8.0'
+    compile 'com.braintreepayments:card-form:3.0.3'
+    compile 'com.stripe:stripe-android:2.0.2'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.h6ah4i.android.materialshadowninepatch:materialshadowninepatch:0.6.5'
+    compile 'com.skyfishjy.ripplebackground:library:1.0.1'
+    compile 'com.koushikdutta.ion:ion:2.+'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.splunk:mint-android-sdk:5.1.0'
+    compile 'com.github.citux:datetimepicker:0.2.0'
+    compile 'com.intuit.sdp:sdp-android:1.0.4'
+    compile 'com.intuit.ssp:ssp-android:1.0.4'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.facebook.android:account-kit-sdk:4.+'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.android.support:support-annotations:27.0.2'
+    compile 'com.hbb20:ccp:1.7.1'
+    testCompile 'junit:junit:4.12'
+    compile 'me.philio:pinentryview:1.0.6'
+    //retrofit gson convertor
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+
+    compile 'com.appsflyer:af-android-sdk:4+@aar'
+    compile 'com.android.installreferrer:installreferrer:1.0'
+
+
+}
+apply plugin: 'com.google.gms.google-services'
